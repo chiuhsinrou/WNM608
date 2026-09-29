@@ -2,7 +2,7 @@
 
 
 *, *::after, *::before {
-	box - sizing: border-box;
+	box-sizing: border-box;
 }
 
 :root {
@@ -10,10 +10,13 @@
 	--color-neutral-medium:#cdc2b2;
 	--color-neutral-dark:#8b7b64;
 
+	--color-main-light:#b1a592;
+	--color-main-medium:#736f4a;
+	--color-main-dark:#484424;
+
 	--color-black:#221f16;
 	--color-white:#ffffff;
 	--color-gray:#736f68;
-	--color-olive:#48442f;
 
 	--header-height:3rem;
 	--spacing:1rem;
@@ -72,6 +75,24 @@ a:hover {
 .flex-align-center { align-items:center; }
 .flex-justify-center { justify-content:center; }
 
+/* GRID SYSTEM */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.grid.gap {
+    gap: 1em;
+}
+
+.col-xs-12 {
+    grid-column: span 12;
+}
+
+.col-md-4 {
+    grid-column: span 4;
+}
 
 
 /* COMPONENT CLASSES */
@@ -83,10 +104,89 @@ a:hover {
 	padding-left: 0;
 }
 
+.nav a {
+	display:block;
+	padding: 0.2em 0.5em;
+}
+
+.nav a:hover {
+	background-color: var(--color-main-medium);
+	color: var(--color-white);
+	text-decoration:none;
+}
+
+.nav .active a {
+	background-color: var(--color-main-light);
+	color: inherit;
+}
+
+.nav-material ul,
+.nav-crumbs ul,
+.nav-pills ul,
+.nav-stretch ul,
+.nav-flex ul {
+	display: flex;
+}
+
+.nav-material li,
+.nav-stretch li {
+	flex: 1 1 auto;
+	text-align: center;
+}
+
+.nav-pills a {
+	border-radius: 2em;
+	padding: 0.5em 1em;
+}
+
+.nav-crumbs a {
+	display: inline-block;
+}
+
+.nav-crumbs .active a,
+.nav-crumbs a:hover {
+	background-color: transparent;
+	color: inherit;
+	text-decoration: underline;
+}
+
+.nav-crumbs li:not(:first-child)::before {
+	content: '/';
+}
+
+.nav-material a {
+	padding: 0.5em 1em;
+	position: relative;
+}
+
+.nav-material .active a {
+	background-color: transparent;
+	color: inherit;
+}
+
+.nav-material a:hover {
+	background-color:var(--color-neutral-light);
+	color: inherit;
+}
+
+.nav-material a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	background-color: var(--color-main-medium);
+	transition: all 0.3s;
+}
+
+.nav-material .active a::after {
+	height: 4px;
+}
 
 .navbar {
 	background-color:var(--color-neutral-medium);
-	color:var(--color-olive);
+	color:var(--color-main-dark);
 	line-height:var(--header-height) ;
 }
 
@@ -102,40 +202,38 @@ a:hover {
 
 /* CARD */
 
-.product {
-	background-color: #f6f4f0;
-	margin-top: 24px;
-	margin-bottom: 1em;
-	margin-left: 12px;
-	margin-right: 12px;
-	padding: 0;
+.home-product {
+    background-color: #f6f4f0;
+    margin-top: 24px;
+    margin-bottom: 1em;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 0;
 
-	overflow: hidden;
-	position: relative;
-	display: flex;
-	flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 
-	/* 改成彈性基準寬度，最大不超過 260px */
-	flex: 1 1 200px;
-	max-width: 260px;
-	box-sizing: border-box;
+    flex: 1 1 200px;
+    max-width: 260px;
+    box-sizing: border-box;
 }
 
-.product img {
-  width: 100%;
-  aspect-ratio: 3 / 4; /* 強制維持直立黃金比例，圖片高度統一 */
-  object-fit: cover;   /* 圖片填滿裁切，不會被壓扁或拉長 */
-  display: block;      /* 消除圖片底部預設的 3px 空隙 */
+.home-product img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
 }
 
-/* 文字區域自己補 padding 留白 */
 .product-info {
-  padding: 1em;
+    padding: 1em;
 }
 
 
 .card {
-	background-color:#f6f4f0;
+	background-color:var(--color-white);
 	margin-top: 1em;
 	margin-bottom: 1em;
 	padding: 1em;
@@ -145,7 +243,6 @@ a:hover {
 	display: flex;
 	flex-direction: column;
 }
-
 
 
 .card.soft {
@@ -180,4 +277,56 @@ a:hover {
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
+}
+
+/*TABLES*/
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table th,
+.table td {
+	text-align: left;
+	padding: 0.2em 0.5em;
+}
+
+.table.striped tbody tr:nth-child(odd) {
+	background-color: var(--color-neutral-light);
+}
+
+.table.lined.all th:not(:first-child),
+.table.lined.all td:not(:first-child),
+.table.lined.vertical th:not(:first-child),
+.table.lined.vertical td:not(:first-child) {
+	border-left: 1px solid var(--color-neutral-medium);
+}
+
+.table.lined.horizontal tbody tr,
+.table.lined.horizontal tbody tr {
+	border-top: 1px solid var(--color-neutral-medium);
+}
+
+.table.lined.all tbody tr,
+.table.lined.all tbody tr {
+	border-top: 1px solid var(--color-neutral-medium);
+}
+
+.table.lined.all,
+.table.lined.border {
+	border: 1px solid var(--color-neutral-medium);
+}
+
+/*Figure*/
+.figure {
+	margin: 0;
+	background-color: var(--color-white);
+}
+.figure img {
+	width: 100%;
+	vertical-align: text-bottom;
+}
+.figure figcaption {
+	padding: 1em;
 }
