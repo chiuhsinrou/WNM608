@@ -4,11 +4,12 @@
 
 	--color-main-light:#b1a592;
 	--color-main-medium:#736f4a;
-	--color-main-dark:#484424;
+	--color-main-dark:#48442f;
 }
 
 body {
 	background-color:var(--color-offwhite) ;
+	padding-bottom: 4em;
 }
 
 .figure.product {
@@ -58,6 +59,18 @@ body {
 
 .product-overlay:hover img {
 	transform: scale(1.4,1.4);
+}
+
+.favorite label {
+	transition: all 0.3s;
+	display: inline-block;
+	transform: scale(1,1);
+	color: var(--color-neutral-medium);
+}
+
+.favorite input:checked + label {
+	color:red;
+	transform: scale(1.5,1.5);
 }
 
 @media (max-width: 600px) {
