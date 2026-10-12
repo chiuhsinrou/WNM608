@@ -17,7 +17,7 @@
 	<header class="navbar">
 		<div class="container display-flex">
 			<div class="flex-none">
-				<h1>Styleguide</h1>
+				<h1>HYGGE Styleguide</h1>
 			</div>
 			<div class="flex-stretch"></div>
 
@@ -34,6 +34,7 @@
 		<div class="card soft">
 			<nav class="nav">
 				<ul>
+					<li><a href="#colors">Colors</a></li>
 					<li><a href="#typography">Typography</a></li>
 					<ul>
 						<li><a href="#headings">Headings</a></li>
@@ -42,6 +43,7 @@
 					<li><a href="#cards">Cards</a></li>
 					<li><a href="#navigations">Navigations</a></li>
 					<li><a href="#tables">Tables</a></li>
+					<li><a href="#checkout">Checkout / Shipping &amp; Order Summary</a></li>
 					<li><a href="#forms">Forms</a></li>
 					<ul>
 						<li><a href="#inputs">Inputs</a></li>
@@ -49,6 +51,9 @@
 						<li><a href="#controls">Controls</a></li>
 						<li><a href="#buttons">Buttons</a></li>
 						<li><a href="#hotdog">Hotdog</a></li>
+						<li><a href="#select">Select</a></li>
+						<li><a href="#checkboxes">Check Boxes</a></li>
+						<li><a href="#checkout">Checkout</a></li>
 					</ul>
 				</ul>
 			</nav>
@@ -143,9 +148,8 @@
 		
 		<div class="card soft" id="paragraphs">
 			<h3>Paragraphs</h3>
-			<p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Ducimus voluptas quas, atque dolores nihil. Perferendis, ad quos alias incidunt dolore perspiciatis modi laborum sit porro accusamus suscipit corporis libero sapiente.</p>
-			<p>Quam, consequatur, voluptatibus? Perferendis veniam provident possimus recusandae molestiae, consectetur corrupti rerum, officia distinctio odit et, nobis excepturi cum ipsa quia accusamus modi quidem dolores illo eos est eaque neque.</p>
-			<p>Deserunt maxime repellat nam vel distinctio officia eligendi incidunt consequuntur rem. Totam ratione eius minima dolor doloribus est voluptatibus magni eaque hic incidunt molestias atque officiis, perferendis, dolore aperiam accusantium.</p>
+			<p>HYGGE is a modern furniture e-commerce website designed for people who value simple, functional, and timeless interiors. The store will offer a curated selection of chairs, tables, storage, lighting, and home accessories.</p>
+			<p>The goal is to create a shopping experience that feels clean, calm, and easy to navigate. Large product imagery, clear typography, neutral colors, and generous white space keep the furniture as the main visual focus.</p>
 		</div>
 	</div>
 
@@ -165,14 +169,15 @@
 				<div class="card hard">Card Hard</div>
 			</div>
 			<div class="col-xs-12 col-md-4">
+				<div class="card flat">Card Flat</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
 				<div class="card dark">Card Dark</div>
 			</div>
 			<div class="col-xs-12 col-md-4">
 				<div class="card medium">Card Medium</div>
 			</div>
-			<div class="col-xs-12 col-md-4">
-				<div class="card flat">Card Flat</div>
-			</div>
+		
 		</div>
 	</div>
 
@@ -190,7 +195,7 @@
 					<nav class="${classes}">
 						<ul>
 							${links.reduce((r,o,i)=>{
-								return r+`<li class="${ran==i?'active':''}"><a href="#${o.toLowerCase()}">${o}</a></li>`;
+								return r+`<li class="${ran==i?'active':''}"><a href="#">${o}</a></li>`;
 							},'')}
 						</ul>
 					</nav>
@@ -205,39 +210,22 @@
 			<script>makeNav('nav')</script>
 	</div>
 
-	<div class="card soft">
+	<div class="card hard">
 			<h3>Flex Nav</h3>
 
 			<script>makeNav('nav nav-flex')</script>
 	</div>
 
-	<div class="card soft">
-			<h3>Stretch Nav</h3>
-
-			<script>makeNav('nav nav-stretch')</script>
-	</div>
-
-
-	<div class="card soft">
+	<div class="card">
 			<h3>Pills Nav</h3>
 
 			<script>makeNav('nav nav-pills')</script>
 	</div>
 
-	<div class="card soft">
-			<h3>Crumbs Nav</h3>
-
-			<script>makeNav('nav nav-crumbs')</script>
-	</div>
-
-	<div class="card soft">
-			<h3>Material Nav</h3>
-
-			<script>makeNav('nav nav-material')</script>
-	</div>
 
 	<script>
 		$("#navigations a").on("click", function(e) {
+			e.preventDefault();
 			$(this).closest("li").addClass("active")
 			.siblings().removeClass("active");
 		})
@@ -293,8 +281,8 @@
 				<figure class="figure product">
 					<img src="../img/placeholder.png" alt="Product placeholder">
 					<figcaption>
-						<div>Product Name</div>
-						<div>$3.99</div>
+						<div>Lounge Chair</div>
+						<div>$680</div>
 					</figcaption>
 				</figure>
 			</div>
@@ -302,8 +290,8 @@
 				<figure class="figure product">
 					<img src="../img/placeholder.png" alt="Product placeholder">
 					<figcaption>
-						<div>Product Name</div>
-						<div>$3.99</div>
+						<div>Dining Table</div>
+						<div>$1,500</div>
 					</figcaption>
 				</figure>
 			</div>
@@ -311,8 +299,8 @@
 				<figure class="figure product">
 					<img src="../img/placeholder.png" alt="Product placeholder">
 					<figcaption>
-						<div>Product Name</div>
-						<div>$3.99</div>
+						<div>Sofa</div>
+						<div>$1,999</div>
 					</figcaption>
 				</figure>
 			</div>
@@ -327,8 +315,8 @@
 					<img src="../img/placeholder.png" alt="Product placeholder">
 					<figcaption>
 						<div class="caption-body">
-							<div>Product Name</div>
-							<div>$3.99</div>
+							<div>Side Table</div>
+							<div>$399</div>
 						</div>
 					</figcaption>
 				</figure>
@@ -339,8 +327,8 @@
 					<img src="../img/placeholder.png" alt="Product placeholder">
 					<figcaption>
 						<div class="caption-body">
-							<div>Product Name</div>
-							<div>$3.99</div>
+							<div>Bookshelf</div>
+							<div>$850</div>
 						</div>
 					</figcaption>
 				</figure>
@@ -351,8 +339,8 @@
 					<img src="../img/placeholder.png" alt="Product placeholder">
 					<figcaption>
 						<div class="caption-body">
-							<div>Product Name</div>
-							<div>$3.99</div>
+							<div>Cabinet</div>
+							<div>$1,345</div>
 						</div>
 					</figcaption>
 				</figure>
@@ -374,60 +362,23 @@
 				<input type="password"><br>
 				<input type="url"><br>
 				<input type="email"><br>
-				<input type="datetime-local"><br>
 				<input type="date"><br>
 				<input type="search">
 			</form>
 
-			<h3>Form Input</h3>
-			<form>
-				<input type="text" placeholder="Text" class="form-input">
-				<input type="number" placeholder="Number" class="form-input"><br>
-				<input type="password" placeholder="Password" class="form-input"><br>
-				<input type="search" placeholder="Search" class="form-input">
-			</form>
 
 			<h3 id="labels">Form Label</h3>
 			<form>
-				<label class="form-label">Example</label>
+				<label class="form-label">Text</label>
 				<input type="text" placeholder="Text" class="form-input">
-				<label class="form-label">Example</label>
-				<input type="number" placeholder="Number" class="form-input"><br>
-				<label class="form-label">Example</label>
+				<label class="form-label">Email</label>
+				<input type="email" placeholder="Email" class="form-input"><br>
+				<label class="form-label">Password</label>
 				<input type="password" placeholder="Password" class="form-input"><br>
-				<label class="form-label">Example</label>
+				<label class="form-label">Search</label>
 				<input type="search" placeholder="Search" class="form-input">
 			</form>
 
-			<h3 id="controls">Form Control</h3>
-			<form>
-				<div class="form-control">
-					<label class="form-label">Example</label>
-					<input type="text" placeholder="Text" class="form-input">
-				</div>
-				<div class="form-control">
-					<label class="form-label">Example</label>
-					<input type="number" placeholder="Number" class="form-input"><br>
-				</div>
-				<div class="form-control">
-					<label class="form-label">Example</label>
-					<input type="password" placeholder="Password" class="form-input"><br>
-				</div>
-				<div class="form-control display-flex flex-align-center">
-					<div class="flex-none">
-						<label class="form-label">Example</label>
-					</div>
-					<div class="flex-stretch">
-						<input type="search" placeholder="Search" class="form-input">
-					</div>
-					<div class="flex-none">
-						<label class="form-label">Example</label>
-					</div>
-					<div class="flex-stretch">
-						<input type="search" placeholder="Search" class="form-input">
-					</div>
-				</div>
-			</form>
 		</div>
 
 		<h3 id="buttons">Buttons</h3>
@@ -458,28 +409,13 @@
 					<input type="search" class="hotdog" placeholder="Search">
 				</form>
 			</div>
-			<div class="form-control">
-				<form>
-					<input type="search" class="hotdog dark" placeholder="Search">
-				</form>
-			</div>
-			<div class="form-control">
-				<form class="card dark">
-					<input type="search" class="hotdog light" placeholder="Search">
-				</form>
-			</div>
-			<div class="form-control">
-				<form class="hotdog">
-					<span>&equiv;</span>
-					<input type="search" placeholder="Search">
-				</form>
-			</div>
-			<div class="form-control">
-				<form class="hotdog">
-					<input type="search" placeholder="Search">
-					<span>&equiv;</span>
-				</form>
-			</div>
+			
+				<div class="form-control">
+					<form class="hotdog">
+						<input type="search" placeholder="Search">
+						<button type="submit" class="form-button">Search</button>
+					</form>
+				</div>
 		</div>
 
 		<h2 id="select">Select</h2>
@@ -493,39 +429,164 @@
 				<option>4</option>
 			</select>
 			</div>
-			<div class="display-flex">
-				<div class="flex-stretch"></div>
-				<div class="flex-none">
-					<div class="form-select">
-			<select>
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-			</select>
-			</div>
-				</div>
-			</div>
 		</div>
 
 		<h2 id="checkboxes">Check Boxes</h2>
-		<div class="card soft">
-			<label>Label <input type="checkbox" id="input-1"></label>
-			<label for="input-1">Label</label>
-		</div>
+			<div class="card soft">
 
-		<h3>Heart Checkbox</h3>
-		<div class="favorite">
-			<input type="checkbox" id="heart-example">
-			<label for="heart-example">&hearts;</label>
-		</div>
+				<h3>Heart Checkbox</h3>
+					<div class="favorite">
+						<input type="checkbox" id="heart-example">
+						<label for="heart-example">&hearts;</label>
+					</div>
 
-		<h3>Toggle</h3>
-		<div class="toggle">
-			<input type="checkbox" id="toggle-1" class="toggle-checkbox">
-			<label for="toggle-1" class="toggle-label"></label>
-		</div>
+				<h3>Toggle</h3>
+					<div class="toggle">
+						<input type="checkbox" id="toggle-1" class="toggle-checkbox">
+						<label for="toggle-1" class="toggle-label"></label>
+						<label for="toggle-1">Turn on notifications</label>
+					</div>
+</div>
 	</div>
 
+
+	<div class="container checkout" id="checkout">
+
+	<h2>Checkout</h2>
+	<p>1. Shipping → 2. Payment → 3. Confirmation</p>
+	<div class="grid gap">
+		<div class="col-xs-12 col-md-8"><div class="card soft">
+			<h2>Shipping</h2>
+			<form action="#payment" method="get">
+				<div class="grid gap">
+				<div class="col-xs-12 col-md-6"><div class="form-control">
+					<label class="form-label" for="first-name">First Name</label>
+					<input type="text" id="first-name" class="form-input" required>
+				</div></div>
+				<div class="col-xs-12 col-md-6"><div class="form-control">
+					<label class="form-label" for="last-name">Last Name</label>
+					<input type="text" id="last-name" class="form-input" required>
+				</div></div>
+				<div class="col-xs-12 col-md-12"><div class="form-control">
+					<label class="form-label" for="email">Email</label>
+					<input type="email" id="email" class="form-input" required>
+				</div></div>
+				<div class="col-xs-12 col-md-12"><div class="form-control">
+					<label class="form-label" for="address">Street Address</label>
+					<input type="text" id="address" class="form-input" required>
+				</div></div>
+				<div class="col-xs-12 col-md-12"><div class="form-control">
+					<label class="form-label" for="apartment">Apartment / Suite (optional)</label>
+					<input type="text" id="apartment" class="form-input">
+				</div></div>
+				<div class="col-xs-12 col-md-6"><div class="form-control">
+					<label class="form-label" for="zip">ZIP Code</label>
+					<input type="text" id="zip" class="form-input" required>
+				</div></div>
+				<div class="col-xs-12 col-md-6"><div class="form-control">
+					<label class="form-label" for="city">City</label>
+					<input type="text" id="city" class="form-input" required>
+				</div></div>
+				<div class="col-xs-12"><div class="form-control">
+					<label class="form-label" for="state">State</label>
+					<div class="form-select"><select id="state" required>
+						<option value="">Please Select</option>
+						<option>California</option>
+						<option>New York</option>
+						<option>Texas</option>
+						<option>Washington</option>
+						<option>Other</option>
+					</select></div>
+				</div></div>
+				<div class="col-xs-12 col-md-12"><div class="form-control">
+					<label class="form-label" for="phone">Phone Number</label>
+					<input type="tel" id="phone" class="form-input" required>
+				</div></div>
+				</div>
+				<div class="form-control"><label><input type="checkbox" checked> Use as billing address</label></div>
+				<div class="form-control"><button type="submit" class="form-button">Next</button></div>
+			</form>
+		</div></div>
+		<div class="col-xs-12 col-md-4">
+			<div class="card soft">
+				<h2>Order Summary</h2>
+				<p>Pillow × 1 — $49.95</p>
+				<table class="table lined horizontal">
+					<tbody>
+						<tr><td>Subtotal</td><td>$49.95</td></tr>
+						<tr><td>Shipping</td><td>$6.00</td></tr>
+						<tr><td>Tax</td><td>$4.50</td></tr>
+						<tr><th>Order Total</th><td><strong>$60.45</strong></td></tr>
+					</tbody>
+				</table>
+				<p>Sample order for this checkout demo.</p>
+				<a href="#figures">Back to Shop</a>
+			</div>
+		</div>
+	</div>
+	
+	</div>
+
+	<div class="container checkout" id="payment">
+
+	<h2>Checkout</h2>
+	<p>1. Shipping → 2. Payment → 3. Confirmation</p>
+	<div class="grid gap">
+		<div class="col-xs-12 col-md-8"><div class="card soft">
+			<h2>Payment</h2>
+			<p>Demo only. Use made-up payment details.</p>
+			<form action="#confirmation" method="get">
+				<div class="grid gap">
+				<div class="col-xs-12 col-md-12"><div class="form-control">
+					<label class="form-label" for="card-name">Name on Card</label>
+					<input type="text" id="card-name" class="form-input" required>
+				</div></div>
+				<div class="col-xs-12 col-md-12"><div class="form-control">
+					<label class="form-label" for="card-number">Card Number (demo only)</label>
+					<input type="text" id="card-number" class="form-input" required>
+				</div></div>
+				<div class="col-xs-12 col-md-6"><div class="form-control">
+					<label class="form-label" for="expiration">Expiration Date</label>
+					<input type="text" id="expiration" class="form-input" required>
+				</div></div>
+				<div class="col-xs-12 col-md-6"><div class="form-control">
+					<label class="form-label" for="security-code">Security Code (demo only)</label>
+					<input type="text" id="security-code" class="form-input" required>
+				</div></div>
+				</div>
+				<div class="form-control"><button type="submit" class="form-button">Place Order</button></div>
+			</form>
+			<a href="#checkout">Back to Shipping</a>
+		</div></div>
+
+		</div>
+	</div>
+	
+	</div>
+
+	<div class="container checkout" id="confirmation">
+
+	<h2>Confirmation</h2>
+	<div class="grid gap">
+		<div class="col-xs-12 col-md-8"><div class="card soft">
+			<h2>Thank you!</h2>
+			<p>Your sample order is complete.</p>
+			<p>This is a checkout demo. No order was sent and no payment was made.</p>
+			<div class="form-control"><a class="form-button" href="#figures">Continue Shopping</a></div>
+		</div></div>
+
+		</div>
+	</div>
+	
+	</div>
+
+	<script>
+		document.querySelectorAll('.checkout form').forEach(function(form) {
+			form.addEventListener('submit', function(e) {
+				e.preventDefault();
+				window.location.hash = form.getAttribute('action');
+			});
+		});
+	</script>
 </body>
 </html>

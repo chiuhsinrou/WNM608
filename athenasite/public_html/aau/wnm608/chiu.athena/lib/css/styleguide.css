@@ -279,7 +279,6 @@ a:hover {
 }
 
 
-
 .view-window {
 	height: 100vh;
 	position: relative;
@@ -410,6 +409,20 @@ a:hover {
 .hotdog.light {
 	background-color: var(--color-white);
 	color: var(--color-black);
+}
+
+.hotdog input {
+	flex: 1;
+	width: auto;
+	min-width: 0;
+}
+
+.hotdog .form-button {
+	flex: none;
+	width: auto;
+	background-color: var(--color-main-dark);
+	color: var(--color-white);
+	border-radius: 2em;
 }
 
 .form-select>select {
