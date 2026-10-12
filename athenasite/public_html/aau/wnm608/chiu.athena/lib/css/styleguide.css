@@ -94,6 +94,14 @@ a:hover {
     grid-column: span 4;
 }
 
+.col-md-8 {
+    grid-column: span 8;
+}
+
+.col-md-6 {
+    grid-column: span 6;
+}
+
 /* SMALL CLASSES */
 
 .media-image {

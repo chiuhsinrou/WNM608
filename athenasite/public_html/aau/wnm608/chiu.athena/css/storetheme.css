@@ -93,10 +93,4 @@ body {
 		padding: 0;
 	}
 }
-/* Checkout: uses the existing twelve-column grid */
-.checkout .col-md-4 { grid-column: span 12; }
-@media (min-width: 768px) {
-	.checkout .col-md-8 { grid-column: span 8; }
-	.checkout .col-md-4 { grid-column: span 4; }
-	.checkout .col-md-6 { grid-column: span 6; }
-}
+
