@@ -33,7 +33,7 @@ $classes = implode(", ", $user->classes);
         <span>$user->classes</span>
     </div>
     </div>
-    HTML;
+HTML;
 }
 
 
