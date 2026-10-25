@@ -11,7 +11,6 @@
 	<?php include "parts/navbar.php"; ?>
 
 	<div class="container">
-		<?php include "parts/page_links.php"; ?>
 
 		<div class="card soft">
 			<h2>Contact HYGGE</h2>
