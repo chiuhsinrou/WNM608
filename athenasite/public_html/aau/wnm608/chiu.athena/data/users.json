@@ -4,13 +4,13 @@
 		"type":"Student",
 		"email":"athena@example.com",
 		"classes":[608,617,820]
-	}
+	},
 	{
 		"name":"Jack Lin",
 		"type":"Student",
 		"email":"jack@example.com",
 		"classes":[601,608,617,820]
-	}
+	},
 	{
 		"name":"Ross Gellar",
 		"type":"Professor",
