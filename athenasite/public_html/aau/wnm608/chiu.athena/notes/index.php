@@ -73,11 +73,11 @@
 
 	// superglobal
 	// ?name=Athena
-	echo "<a href='?name=Athena'>visit</a><br>"
+	echo "<a href='?name=Athena'>visit</a><br>";
 	echo "<div>My name is {$_GET['name']}</div>";
 
 	// ?name=Athena&type=textarea
-	echo "<a href='?name=Athena&type=textarea'>visit</a><br>"
+	echo "<a href='?name=Athena&type=textarea'>visit</a><br>";
 	echo "<{$_GET['type']}>My name is {$_GET['name']}</{$_GET['type']}>";
 
 	?>

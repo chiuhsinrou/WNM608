@@ -1,4 +1,3 @@
-
 :root {
 	--color-offwhite: #f6f4f0;
 
@@ -16,6 +15,32 @@ body {
 	border-radius: 0.5em;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 	overflow: hidden;
+	height: 100%;
+	transition: all 0.3s;
+}
+
+.product.figure img {
+	height: 100%;
+	object-fit: contain;
+}
+
+.productlist a {
+	text-decoration: none;
+}
+
+.productlist.figure.flex-stretch {
+    height: 200px;
+    flex: none;
+}
+
+.productlist.figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product.figure:hover {
+	box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 }
 
 .product-overlay {
@@ -94,3 +119,40 @@ body {
 	}
 }
 
+
+.images-main img{
+	width: 100%;
+	height: 40vh;
+	object-fit: contain;
+} 
+
+.images-thumbs {
+    width: 120px;
+    flex: 0 0 120px;
+}
+
+.images-thumbs img {
+	display: block;
+	width: 8em;
+	height: 6em;
+	object-fit: contain;
+}
+/* Product item: keep the existing 8:4 grid and small thumbnails */
+.col-md-8 .images-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.col-md-8 .images-thumbs img {
+    width: 110px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.product-title {
+    font-size: 18px;
+    line-height: 1.3;
+}
